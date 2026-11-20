@@ -34,6 +34,8 @@ canvasWidth: 980
 两条主线：智能合约和安全性分析（第6章）。最后落到"怎么考"。
 -->
 
+[下载区块链工程技术人员培训初级讲座幻灯片](https://bettermorn.github.io/StudyBlockchain/courseware/studyblockchain.pdf)
+
 ---
 
 # 30 分钟议程
@@ -660,7 +662,7 @@ flowchart LR
 </div>
 </div>
 
-<div class="tip mt-6">一句话：<b>合约要会写，更要会测；理论要讲清，实操要过线。</b></div>
+<div class="tip mt-6"><b>合约要会写，更要会测；理论要讲清，实操要过线。</b></div>
 
 <!--
 【1 min】收尾。提醒两处提示：①教材第五章（智能合约）幻灯片中平台比较图请结合原图；②第六章教材节选内容较少，教师可对照教材完整文本补充。
