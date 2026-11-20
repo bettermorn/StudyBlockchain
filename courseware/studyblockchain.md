@@ -426,7 +426,7 @@ flowchart LR
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-```mermaid {scale: 0.72}
+```mermaid {scale: 0.5}
 flowchart TB
   A[应用层<br/>身份认证·权限·业务安全] --> B[合约层<br/>审计·应急机制]
   B --> C[共识层<br/>PoW/PoS/PBFT 安全性]
