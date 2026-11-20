@@ -1,0 +1,78 @@
+/* 全局样式：表格紧凑、中文字体、标注色块 */
+:root {
+  --slidev-theme-primary: #0f766e;
+}
+
+.slidev-layout {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+
+.slidev-layout h1 {
+  font-size: 1.7em;
+  margin-bottom: 0.5em;
+}
+
+.slidev-layout table {
+  font-size: 0.72em;
+  line-height: 1.35;
+  width: 100%;
+}
+
+.slidev-layout th {
+  background: #0f766e14;
+  white-space: nowrap;
+}
+
+.slidev-layout td,
+.slidev-layout th {
+  padding: 0.28em 0.6em;
+  vertical-align: top;
+}
+
+.slidev-layout ul {
+  line-height: 1.55;
+}
+
+.tip {
+  border-left: 4px solid #0f766e;
+  background: #0f766e12;
+  padding: 0.4em 0.9em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-top: 0.6em;
+}
+
+.warn {
+  border-left: 4px solid #d97706;
+  background: #d9770612;
+  padding: 0.4em 0.9em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-top: 0.6em;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin: 0.18em 0;
+  font-size: 0.78em;
+}
+
+.bar-row .label {
+  width: 7.5em;
+  text-align: right;
+  padding-right: 0.7em;
+}
+
+.bar-row .bar {
+  height: 1.25em;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  line-height: 1.25em;
+}
+
+.small {
+  font-size: 0.8em;
+}
