@@ -163,7 +163,7 @@ flowchart TB
 
 # 备课框架：「五说」+ 面向工程技术人员
 
-```mermaid {scale: 0.8}
+```mermaid {scale: 0.7}
 flowchart LR
   A[说教材<br/>地位·内容·联系] --> B[说学生<br/>基础·差异·障碍]
   B --> C[说教法<br/>概念法·比较法]
@@ -322,7 +322,7 @@ classDiagram
 
 # 智能合约实操设计：从问题到部署测试
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.55}
 flowchart LR
   A[描述分析问题] --> B[类图设计合约]
   B --> C[Remix 编写合约]
@@ -771,7 +771,7 @@ flowchart LR
 
 ---
 
-# 考试长什么样
+# 考试方式
 
 <div class="grid grid-cols-2 gap-6">
 <div>
@@ -789,17 +789,18 @@ flowchart LR
 </div>
 <div>
 
-**理论题**
+**理论题（100 分）**
 
-<div class="bar-row"><div class="label">开发应用系统</div></div>
-<div class="bar-row"><div class="label">设计应用系统</div></div>
-<div class="bar-row"><div class="label">运维区块链系统</div></div>
-<div class="bar-row"><div class="label">测试系统</div></div>
-<div class="bar-row"><div class="label">培训与指导</div></div>
-<div class="bar-row"><div class="label">基础知识</div></div>
-<div class="bar-row"><div class="label">职业道德</div></div>
+<div class="bar-row"><div class="label">开发应用系统</div><div class="bar" style="width:60%;background:#0369a1">30</div></div>
+<div class="bar-row"><div class="label">设计应用系统</div><div class="bar" style="width:40%;background:#0f766e">20</div></div>
+<div class="bar-row"><div class="label">测试系统</div><div class="bar" style="width:30%;background:#b45309">15</div></div>
+<div class="bar-row"><div class="label">运行维护系统</div><div class="bar" style="width:30%;background:#6b7280">15</div></div>
+<div class="bar-row"><div class="label">培训与指导</div><div class="bar" style="width:10%;background:#9ca3af">5</div></div>
+<div class="bar-row"><div class="label">基础知识</div><div class="bar" style="width:20%;background:#7c3aed">10</div></div>
+<div class="bar-row"><div class="label">职业道德</div><div class="bar" style="width:10%;background:#9ca3af">5</div></div>
 
-<div class="small">题型：单选、判断、多选</div>
+
+<div class="small">题型：单选题、判断题、多选题。</div>
 
 </div>
 </div>
@@ -930,14 +931,14 @@ sequenceDiagram
 
 # 开发应用系统（40 分）：题型与难点
 
-| 题号 | 题型 | 分值 | 考什么 |
+| 序号 | 题型 | 分值 | 考什么 |
 |---|---|---|---|
-| 问题 8 | 业务类图填空 | 4 | 类、接口及其关系（如加密服务接口、文件存储服务接口） |
-| 问题 9 | 业务代码填空 | **12** | 读注释，补判空、取值、比较、异常码 |
-| 问题 10 | 代码作用简答 | 4 | 一段代码做什么（创建链上账户、审核上链等） |
-| 问题 11 | 合约类图填空 | 4 | 合约类、实体类（如 Token） |
-| 问题 12 | 合约方法代码填空 | **12** | 补条件，读懂发行逻辑 |
-| 问题 13 | 代码作用简答 | 4 | 签名、日志等 |
+| 1 | 业务类图填空 | 4 | 类、接口及其关系（如加密服务接口、文件存储服务接口） |
+| 2 | 业务代码填空 | **12** | 读注释，补判空、取值、比较、异常码 |
+| 3 | 代码作用简答 | 4 | 一段代码做什么（创建链上账户、审核上链等） |
+| 4 | 合约类图填空 | 4 | 合约类、实体类（如 Token） |
+| 5 | 合约方法代码填空 | **12** | 补条件，读懂发行逻辑 |
+| 6 | 代码作用简答 | 4 | 签名、日志等 |
 
 <div class="warn"><b>难点</b>：①代码填空要<b>完全相同</b>才得分；②学员能"看懂"但写不出准确表达式；③合约代码是类 C 的伪语言，不熟会心里发虚。</div>
 
@@ -947,7 +948,7 @@ sequenceDiagram
 
 ---
 
-# 开发剖析（一）：业务代码题（问题 9）
+# 开发剖析（一）：业务代码题
 
 ```java {2,6,10}
 Series series = seriesService.getById(dto.getTopic());
@@ -974,12 +975,12 @@ if (numForSeries >= series.getNum()) {                     // (26) 上限
 
 ---
 
-# 开发剖析（二）：合约发行方法（问题 12）
+# 开发剖析（二）：合约发行方法
 
 <div class="grid grid-cols-2 gap-2">
 <div>
 
-```mermaid {scale: 0.4}
+```mermaid {scale: 0.3}
 flowchart TB
   A[Mint 发行] --> B{"开售时间检测<br/>未开售或时间未到"}
   B -- 是 --> X1[返回: 尚未开售]
@@ -1022,7 +1023,7 @@ flowchart TB
 # 测试系统（15 分）：难点与建议
 
 | 序号 | 包含内容| 教学要点 |
-|---|---|---|---|
+|---|---|---|
 | 1 | 性能测试报告包含的内容 ，功能测试的 4 个方面 | 报告与用例**模板化** |
 | 2 | 变量符号化；路径遍历完毕；测试用例 ；执行目标程序；路径遍历完毕；约束求解 | 符号执行的流程 |
 | 3 | 自动化脚本补断言、计算 TPS | 一致性检查、TPS |
@@ -1051,7 +1052,7 @@ flowchart TB
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-```mermaid {scale: 0.4}
+```mermaid {scale: 0.5}
 flowchart TB
   A[发送存证交易] --> B[等待上链与区块同步]
   B --> C[分别查询 3 个节点]
@@ -1087,12 +1088,12 @@ log.info("链上TPS：" + total / timeDiff);
 
 ---
 
-# 运行维护系统（20 分）：整表填空
+# 运行维护系统（20 分）
 
 
 
-| 知识方面 | 内容 | 重要知识点 |
-|---|---|---|---|
+| 方面 | 内容 | 重要知识点 |
+|---|---|---|
 | 缺陷与应急恢复 | 性能问题→调参；变更问题→回滚；资源不足→扩容；服务异常→重启；数据库→分析快照、优化 SQL | 业务系统、回滚、重启 、变更、扩容、数据库性能下降 |
 | 区块链常见异常 | 节点离线、上链失败、磁盘超 80%、区块高度落后 | 节点服务、时间不一致、网络不通 、异常终止、节点服务、出现错误 |
 | 故障分级 | 一至四级 | 网络、系统资源使用率、硬件、不可抗力、系统资源使用率、网络、数据库、机房故障 |
@@ -1121,7 +1122,7 @@ log.info("链上TPS：" + total / timeDiff);
 </div>
 <div>
 
-```mermaid {scale: 0.4}
+```mermaid {scale: 0.45}
 flowchart TB
   A[应用提示数据上链失败] --> B{"接口服务已启动?"}
   B -- 否 --> B1[检查并启动接口服务]
