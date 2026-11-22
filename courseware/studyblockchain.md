@@ -13,7 +13,7 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
-routerMode: hash
+routerMode: history
 aspectRatio: 16/9
 canvasWidth: 980
 ---
