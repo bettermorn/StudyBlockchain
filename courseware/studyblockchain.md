@@ -986,7 +986,7 @@ if (numForSeries >= series.getNum()) {                     // (26) 上限
 
 <div class="small"><b>图 1　前置检查</b>：开售时间 → custom → 种类数上限</div>
 
-```mermaid {scale: 0.3}
+```mermaid {scale: 0.5}
 flowchart TB
   A[Mint 发行] --> B{"开售时间检测<br/>未开售或时间未到"}
   B -- 是 --> X1[返回: 尚未开售]
@@ -1003,7 +1003,7 @@ flowchart TB
 
 <div class="small"><b>图 2　新增 / 增发判断</b>：历史发行量 hn</div>
 
-```mermaid {scale: 0.3}
+```mermaid {scale: 0.5}
 flowchart TB
   S([图 1 检查通过]) --> E{"hn == 0<br/>新增 token"}
   E -- 是 --> F["检查 num 在 1 到 singleQuantity<br/>记录发行量，种类数加一<br/>持久化 token 与 owner 资产"]
@@ -1031,10 +1031,12 @@ flowchart TB
 
 **讨论题**：种类数检查位于"新增/增发"分支之前，对已存在的 token 增发是否也会被拦住？
 
+教学方法：先画流程图，再填空。讨论题用于训练学员从"补空"提升到"审代码"。
+
 </div>
 </div>
 
-教学方法：先画流程图，再填空。讨论题用于训练学员从"补空"提升到"审代码"。
+
 
 
 ---
