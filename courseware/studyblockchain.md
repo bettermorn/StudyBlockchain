@@ -978,10 +978,12 @@ if (numForSeries >= series.getNum()) {                     // (26) 上限
 
 # 开发剖析（二）：合约发行方法
 
-<div class="grid grid-cols-2 gap-2">
+<div class="grid grid-cols-2 gap-4">
 <div>
 
-```mermaid {scale: 0.3}
+<div class="small"><b>图 1　前置检查</b>：开售时间 → custom → 种类数上限</div>
+
+```mermaid {scale: 0.5}
 flowchart TB
   A[Mint 发行] --> B{"开售时间检测<br/>未开售或时间未到"}
   B -- 是 --> X1[返回: 尚未开售]
@@ -990,33 +992,37 @@ flowchart TB
   C -- 否 --> D
   C1 --> D{"hnt >= maxQuantity"}
   D -- 是 --> X2[返回: 种类数已达上限]
-  D -- 否 --> E{"hn == 0<br/>新增 token"}
-  E -- 是 --> F["检查 num 在 1 到 singleQuantity<br/>记录发行量 种类数加一<br/>持久化 token 与 owner 资产"]
+  D -- 否 --> N([通过，进入图 2])
+```
+
+</div>
+<div>
+
+<div class="small"><b>图 2　新增 / 增发判断</b>：历史发行量 hn</div>
+
+```mermaid {scale: 0.5}
+flowchart TB
+  S([图 1 检查通过]) --> E{"hn == 0<br/>新增 token"}
+  E -- 是 --> F["检查 num 在 1 到 singleQuantity<br/>记录发行量，种类数加一<br/>持久化 token 与 owner 资产"]
   E -- 否 --> G{"hn + num 大于<br/>singleQuantity"}
   G -- 是 --> X3[返回: 超出发行量]
   G -- 否 --> H[更新发行量与用户资产]
 ```
 
 </div>
+</div>
+
 <div class="small">
 
 **重要的代码片段**
 
-| 编号 | 代码 |
-|---|---|
-| 1 | `custom==""` |
-| 2 | `hnt >= maxQuantity` |
-| 3 | `hn == 0` |
-| 4 | `hn + num > singleQuantity` |
+| 编号 | 1 | 2 | 3 | 4 | 其他（字符串拼接） |
+|---|---|---|---|---|---|
+| 代码 | `custom==""` | `hnt >= maxQuantity` | `hn == 0` | `hn + num > singleQuantity` | `custom`、`itoa(maxQuantity)`、`itoa(singleQuantity)` |
 
-`custom`、`itoa(maxQuantity)`、`itoa(singleQuantity)`。
-
-**讨论题**：种类数检查位于"新增/增发"分支之前，对已存在的 token 增发是否也会被拦住？
+**讨论题**：种类数检查位于"新增/增发"分支之前，对已存在的 token 增发是否也会被拦住？　教学方法：先画流程图，再填空，把学员从"补空"提升到"审代码"。
 
 </div>
-</div>
-
-教学方法：先画流程图，再填空。讨论题用于训练学员从"补空"提升到"审代码"。
 
 
 ---
