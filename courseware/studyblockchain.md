@@ -978,7 +978,10 @@ if (numForSeries >= series.getNum()) {                     // (26) 上限
 
 # 开发剖析（二）：合约发行方法
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-3 gap-4">
+<div class="col-span-2">
+
+<div class="grid grid-cols-2 gap-2">
 <div>
 
 <div class="small"><b>图 1　前置检查</b>：开售时间 → custom → 种类数上限</div>
@@ -1012,17 +1015,26 @@ flowchart TB
 </div>
 </div>
 
+</div>
 <div class="small">
 
 **重要的代码片段**
 
-| 编号 | 1 | 2 | 3 | 4 | 其他（字符串拼接） |
-|---|---|---|---|---|---|
-| 代码 | `custom==""` | `hnt >= maxQuantity` | `hn == 0` | `hn + num > singleQuantity` | `custom`、`itoa(maxQuantity)`、`itoa(singleQuantity)` |
+| 编号 | 代码 |
+|---|---|
+| 1 | `custom==""` |
+| 2 | `hnt >= maxQuantity` |
+| 3 | `hn == 0` |
+| 4 | `hn + num > singleQuantity` |
 
-**讨论题**：种类数检查位于"新增/增发"分支之前，对已存在的 token 增发是否也会被拦住？　教学方法：先画流程图，再填空，把学员从"补空"提升到"审代码"。
+`custom`、`itoa(maxQuantity)`、`itoa(singleQuantity)`。
+
+**讨论题**：种类数检查位于"新增/增发"分支之前，对已存在的 token 增发是否也会被拦住？
 
 </div>
+</div>
+
+教学方法：先画流程图，再填空。讨论题用于训练学员从"补空"提升到"审代码"。
 
 
 ---
