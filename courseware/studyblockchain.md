@@ -988,7 +988,7 @@ class: text-sm
 
 <div class="small"><b>图 1　前置检查</b>：开售时间 → custom → 种类数上限</div>
 
-```mermaid {scale: 0.45}
+```mermaid {scale: 0.4}
 flowchart TB
   A[Mint 发行] --> B{"开售时间检测<br/>未开售或时间未到"}
   B -- 是 --> X1[返回: 尚未开售]
